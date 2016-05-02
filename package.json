@@ -10,10 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/geohacker/shaktiman.git"
   },
+  "bin": {
+    "shaktiman": "./index.js"
+    },
   "author": "Sajjad Anwar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/geohacker/shaktiman/issues"
   },
-  "homepage": "https://github.com/geohacker/shaktiman#readme"
+  "homepage": "https://github.com/geohacker/shaktiman#readme",
+  "dependencies": {
+    "mapbox-upload": "^4.2.2",
+    "minimist": "^1.2.0",
+    "query-overpass": "^1.1.0",
+    "raju": "^3.1.0"
+  }
 }
