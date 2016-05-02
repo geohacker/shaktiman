@@ -1,0 +1,19 @@
+{
+  "name": "shaktiman",
+  "version": "1.0.0",
+  "description": "Extract OSM data from Overpass and create Mapbox Tilesets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geohacker/shaktiman.git"
+  },
+  "author": "Sajjad Anwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geohacker/shaktiman/issues"
+  },
+  "homepage": "https://github.com/geohacker/shaktiman#readme"
+}
