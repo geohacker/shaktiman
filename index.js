@@ -6,7 +6,7 @@ var argv = require('minimist')(process.argv.slice(2));
 var upload = require('mapbox-upload');
 var raju = require('raju');
 
-if (!argv.input || !argv.accessToken || !argv.id) {
+if (!argv.input || !argv.accessToken || !argv.mapid) {
     usage();
     process.exit(1);
 }
