@@ -33,6 +33,10 @@ overpass(query, function(err, data) {
                     flatten(prop, key, props);
                 });
             }
+
+            if (props[key] instanceof Object) {
+                flatten(props[key], key, props);
+            }
         });
     });
     var geojson = JSON.stringify(raju(data));
