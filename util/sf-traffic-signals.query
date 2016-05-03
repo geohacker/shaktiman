@@ -14,4 +14,4 @@
 );
 out body;
 >;
-out skel qt;
+out meta qt;
