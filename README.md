@@ -1,6 +1,8 @@
 # shaktiman
 
-Extract OSM data from Overpass and create Mapbox Tilesets
+![](https://upload.wikimedia.org/wikipedia/en/7/7e/SHAKTIMAAN.gif)
+
+Extract [OpenStreetMap](https://www.openstreetmap.org/#map=15/3.0201/101.2487) data using the [Overpass API](http://overpass-turbo.eu/s/g2W) and create a custom [Mapbox Studio tileset](https://www.mapbox.com/mapbox-studio/) in a single action.
 
 # Usage
 
@@ -11,5 +13,3 @@ Extract OSM data from Overpass and create Mapbox Tilesets
 
 * _MapboxAccessToken must be a secret token with uploads:write permission_
 * _[Queries](http://wiki.openstreetmap.org/wiki/Overpass_API#Simple_usage_examples) are either Overpass XML or Overpass QL style. See examples [in utils.](https://github.com/geohacker/shaktiman/tree/master/util)_
-
-![shaktiman-flying-e1411129691752](https://cloud.githubusercontent.com/assets/371666/14953915/a39c6432-108b-11e6-839c-d2a092a3fc37.png)
