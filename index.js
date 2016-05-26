@@ -22,7 +22,7 @@ var query = fs.readFileSync(__dirname + '/' + input, {encoding: 'utf-8'});
 process.stdout.write('Querying overpass...' + '\n');
 overpass(query, function(err, data) {
     if (err) throw err;
-
+    process.stdout.write('Results:' + data.features.length + ' features\n');
     process.stdout.write('Cleaning up geojson...' + '\n');
     data.features.forEach(function(feature) {
         var props = feature.properties;
