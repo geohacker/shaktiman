@@ -52,9 +52,8 @@ function uploadData(file, accessToken, mapid, user) {
 
  client.createUploadCredentials(function(err, credentials) {
 
-    if (err) {
-        throw err;
-    }
+    if (err) throw err;
+
     var s3 = new AWS.S3({
         accessKeyId: credentials.accessKeyId,
         secretAccessKey: credentials.secretAccessKey,
@@ -67,29 +66,23 @@ function uploadData(file, accessToken, mapid, user) {
         Key: credentials.key,
         Body: fs.createReadStream(file)
     }, function(err, resp) {
-        if (err) {
-            throw err;
-        }
+        if (err) throw err;
     });
 
     client.createUpload({
         tileset: [mapid.split('.')[0], mapid.split('.')[1]].join('.'),
         url: credentials.url
     }, function(err, upload) {
-        console.log(upload);
         if (err) throw err;
-        getProgressStatus(upload.id);           
+        getProgressStatus(upload.id);
     });
 });
 }
 
 function getProgressStatus(uploadId) {
-     console.log('upload id', uploadId);
-     console.log('client.owner', client.owner);
 
     client.readUpload(uploadId, function(err, upload) {
-        console.log('progress err', err);
-        console.log('progress status', upload);
+
         if (upload.progress < 1) {
             getProgressStatus(uploadId);
         }
@@ -99,20 +92,6 @@ function getProgressStatus(uploadId) {
         }
     });
 }
-
-
-    // progress.on('error', function(err){
-    //     if (err) throw err;
-    // });
-
-    // progress.on('progress', function(p){
-    //     process.stdout.write(String(Math.floor(p.percentage)) + '%\n') ;
-    // });
-
-    // progress.once('finished', function(){
-    //     process.stdout.write('Done! \n');
-    // });
-//}
 
 function flatten(obj, parentKey, properties) {
     var objectLength = obj.length;
