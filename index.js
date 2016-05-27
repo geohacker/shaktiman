@@ -91,7 +91,7 @@ function getProgressStatus(uploadId) {
         console.log('progress err', err);
         console.log('progress status', upload);
         if (upload.progress < 1) {
-            getProgressStatus(client, uploadId);
+            getProgressStatus(uploadId);
         }
         else {
             console.log('Upload Done!');
