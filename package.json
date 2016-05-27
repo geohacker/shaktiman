@@ -22,7 +22,6 @@
   "dependencies": {
     "aws-sdk": "^2.3.15",
     "mapbox": "^1.0.0-beta",
-    "mapbox-upload": "^4.2.2",
     "minimist": "^1.2.0",
     "query-overpass": "^1.1.0",
     "raju": "^3.1.0"
