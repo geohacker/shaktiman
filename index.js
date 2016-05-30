@@ -17,6 +17,7 @@ var mapid = argv.mapid;
 var user = mapid.split('.')[0];
 var id = mapid.split('.')[1];
 var name = argv.name;
+var overpassUrl = argv.overpassUrl;
 
 var query = fs.readFileSync(__dirname + '/' + input, {encoding: 'utf-8'});
 process.stdout.write('Querying overpass...' + '\n');
@@ -43,7 +44,7 @@ overpass(query, function(err, data) {
     fs.writeFileSync('query.geojson', geojson);
     process.stdout.write('Uploading to Mapbox...' + '\n');
     uploadData(__dirname + '/query.geojson', accessToken, mapid, user);
-});
+}, overpassUrl);
 
 
 function uploadData(file, accessToken, mapid, user) {
@@ -81,5 +82,5 @@ function flatten(obj, parentKey, properties) {
 }
 
 function usage() {
-    process.stdout.write('shaktiman --query path_to_overpass_query \n --MapboxAccessToken \n --mapid \n --name \n');
+    process.stdout.write('shaktiman --query path_to_overpass_query \n --MapboxAccessToken \n --mapid \n --name \n --overpassUrl');
 }
