@@ -12,4 +12,5 @@ Extract [OpenStreetMap](https://www.openstreetmap.org/#map=15/3.0201/101.2487) d
 4. `shaktiman --query path/to/query --MapboxAccessToken secret_token --mapid username.id --name layername`
 
 * _MapboxAccessToken must be a secret token with uploads:write permission_
+* _Custom Overpass API can be pointed to by using `--overpassUrl`_
 * _[Queries](http://wiki.openstreetmap.org/wiki/Overpass_API#Simple_usage_examples) are either Overpass XML or Overpass QL style. See examples [in utils.](https://github.com/geohacker/shaktiman/tree/master/util)_
