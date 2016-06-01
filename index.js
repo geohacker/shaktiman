@@ -53,7 +53,7 @@ function uploadData(file, accessToken, mapid, user) {
  client.createUploadCredentials(function(err, credentials) {
 
     if (err) throw err;
-
+    console.log('credentials', credentials);
     var s3 = new AWS.S3({
         accessKeyId: credentials.accessKeyId,
         secretAccessKey: credentials.secretAccessKey,
@@ -67,6 +67,7 @@ function uploadData(file, accessToken, mapid, user) {
         Body: fs.createReadStream(file)
     }, function(err, resp) {
         if (err) throw err;
+        console.log('resp', resp);
     });
 
     client.createUpload({
